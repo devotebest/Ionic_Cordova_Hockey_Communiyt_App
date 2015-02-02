@@ -1,0 +1,4 @@
+label.material-design input[type=radio]+.outer .inner, label.material-design input[type=radio]:not(:checked)+.outer .inner
+{
+	height: 29px !important;
+}

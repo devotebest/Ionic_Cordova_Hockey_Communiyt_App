@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+	Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership.  The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	 KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+-->
+<html class="touch">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+
+		<!-- for when we compile on Windows Phone... -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+
+		<!-- CSS
+		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-hc.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-theme-hc.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/global.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/global-app.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/animations.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/fonts.css" />
+		<link rel="stylesheet" type="text/css" href="hc_resources/css/custom_fonts.css" />
+		<link rel="stylesheet" type="text/css" href="hc_resources/css/overlay_popup.css" />
+		<link rel="stylesheet" type="text/css" href="hc_resources/css/page_transitions.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/title.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/login.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/cards.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/sidemenu.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/newsfeed.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/header.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/page_tabs.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/user.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/postform.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/event.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/status.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/notifications.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/inbox.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/team.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/page-messages.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/messages.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/preferences.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/box_score_page.css" />  -->
+
+		<!-- Production  -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheets.min.css" />
+
+		<!-- OS Specific -->
+		<link rel="stylesheet" type="text/css" href="os.css" />
+
+		<!-- Responsive -->
+
+		<title>Hockey Community</title>
+	</head>
+	<body>
+		<button id="scroll_to_top"></button>
+		<div id="hc">
+			<!-- Pages -->
+			<div id="title" class="page"></div>
+			<div id="login" class="page"></div>
+			<div id="newsfeed" class="page"></div>
+			<div id="status" class="page"></div>
+			<div id="user" class="page"></div>
+			<div id="boxscore" class="page"></div>
+			<div id="postform_event" class="page"></div>
+			<div id="postform_status" class="page"></div>
+			<div id="event" class="page"></div>
+			<div id="events" class="page"></div>
+			<div id="notifications" class="page"></div>
+			<div id="inbox" class="page"></div>
+			<div id="team" class="page"></div>
+			<div id="team_edit_roster" class="page"></div>
+			<div id="messages" class="page"></div>
+			<div id="preferences" class="page"></div>
+			<div id="preferences_notifications" class="page"></div>
+		</div>
+
+		<!-- Popups -->
+		<div id="popups"></div>
+
+		<!-- Required -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="os_config.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+		<script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
+
+		<!-- Helpers
+		<script type="text/javascript" src="hc_resources/javascript/global-vars.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/prototypes.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/_main.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/form.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/location.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/dom_functions.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/arrays_and_hashes.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/notifications.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/helpers/messages.js"></script>
+		<script type="text/javascript" src="js/helpers/app.js"></script>
+		<script type="text/javascript" src="js/helpers/api_call.js"></script>
+		<script type="text/javascript" src="js/helpers/pushwoosh.js"></script>-->
+
+		<!-- Languages
+		<script type="text/javascript" src="hc_resources/javascript/languages/en-us.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/fr-ca.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/nl-be.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/es-mx.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/de-de.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/ja.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/ko.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/hu.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/it-it.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/ru.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/pl.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/sk.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/languages/bg.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/handlebars_helpers.js"></script> -->
+
+		<!-- Libraries
+		<script type="text/javascript" src="hc_resources/javascript/libraries/handlebars.runtime-v2.0.0.js"></script>
+		<script type="text/javascript" src="templates.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/libraries/snap.svg-min.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/libraries/moment-with-locales.js"></script>-->
+
+		<!-- Plugins
+		<script type="text/javascript" src="hc_resources/javascript/overlay_popup.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/page_transitions.js"></script>
+		<script type="text/javascript" src="hc_resources/javascript/libraries/svgicons.js"></script>
+		<script type="text/javascript" src="js/plugins/swag.min.js"></script>
+		<script type="text/javascript" src="js/libraries/hc.js"></script> -->
+
+		<!-- Controllers
+		<script type="text/javascript" src="js/controllers/all_pages.js"></script>
+		<script type="text/javascript" src="js/controllers/newsfeed.js"></script>
+		<script type="text/javascript" src="js/controllers/title.js"></script>
+		<script type="text/javascript" src="js/controllers/login.js"></script>
+		<script type="text/javascript" src="js/controllers/user.js"></script>
+		<script type="text/javascript" src="js/controllers/boxscore.js"></script>
+		<script type="text/javascript" src="js/controllers/postform_event.js"></script>
+		<script type="text/javascript" src="js/controllers/postform_status.js"></script>
+		<script type="text/javascript" src="js/controllers/status.js"></script>
+		<script type="text/javascript" src="js/controllers/event.js"></script>
+		<script type="text/javascript" src="js/controllers/events.js"></script>
+		<script type="text/javascript" src="js/controllers/notifications.js"></script>
+		<script type="text/javascript" src="js/controllers/inbox.js"></script>
+		<script type="text/javascript" src="js/controllers/team.js"></script>
+		<script type="text/javascript" src="js/controllers/team_edit_roster.js"></script>
+		<script type="text/javascript" src="js/controllers/messages.js"></script>
+		<script type="text/javascript" src="js/controllers/preferences.js"></script>
+		<script type="text/javascript" src="js/controllers/preferences_notifications.js"></script>  -->
+
+		<!-- Production  -->
+		<script type="text/javascript" src="javascript.min.js"></script>
+
+		<!-- OS specific -->
+		<script type="text/javascript" src="os.js"></script>
+
+		<script type="text/javascript">
+			app.initialize();
+		</script>
+	</body>
+</html>
